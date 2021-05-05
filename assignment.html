@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 1 JavaScript</title>
+	<script type="text/javascript">
+		function calculate() {
+			var gram=Number(document.myform.gram.value);
+			var priceperkyats=Number(document.myform.priceperkyats.value);
+			var kyat,pae,ywae,total;
+			var temp1,temp2,temp3,temp4;
+
+			kyat=parseInt(gram/16.6);
+			temp1=gram/16.6;
+			temp2=temp1-kyat;
+
+			pae=parseInt(temp2*16);
+			temp3=temp2*16
+			temp4=temp3-pae;
+
+
+			ywae=parseInt(temp4*8);
+			
+
+
+			total=(kyat+(pae/16)+(ywae/128))*priceperkyats
+
+			
+			document.myform.kyat.value=kyat;
+			document.myform.pae.value=pae;
+			document.myform.ywae.value=ywae;
+			document.myform.total.value=total;
+
+
+
+
+
+
+
+
+			
+
+		}
+		
+	</script>
+</head>
+<body>
+	<form name="myform">
+		<table>
+			<tr><th><label for="grem">Gram:</label></th><td><input type="number" name="gram" id="grem"></td>
+			</tr>
+			<tr><th>Price Per Kyats:</th><td><input type="number" name="priceperkyats" readonly="readonly" value="1100000">Kyats</td>
+			</tr>
+			<tr align="center"><td colspan="2"><input type="button" value="Calculate" onclick="calculate();"></td>
+			</tr>
+			<tr><th><label>Kyat:</label></th><td><input type="number" name="kyat" readonly="readonly"></td>
+			</tr>
+			<tr><th><label>Pae:</label></th><td><input type="number" name="pae" readonly="readonly"></td>
+			</tr>
+			<tr><th><label>Ywae:</label></th><td><input type="number" name="ywae" readonly="readonly"></td>
+			</tr>
+			<tr><th><label>Total:</label></th><td><input type="number" name="total" readonly="readonly"></td>
+			</tr>
+
+		
+		</table>
+	</form>
+
+</body>
+</html>
